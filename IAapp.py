@@ -6,188 +6,131 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🧠 El Impacto de la Inteligencia Artificial en la Práctica Terapéutica")
+# ESTILOS
+st.markdown("""
+<style>
 
-st.markdown("> La innovación en salud mental comienza cuando usamos la tecnología con ética, conocimiento y humanidad.")
+.main {
+background-color: #fff7fb;
+}
 
+h1 {
+color: #e75480;
+text-align: center;
+}
+
+h2 {
+color: #c94f7c;
+}
+
+section[data-testid="stSidebar"] {
+background-color: #ffe4ef;
+}
+
+div[data-testid="stExpander"] {
+background-color: #ffd6e7;
+border-radius: 12px;
+border: 1px solid #f5a3c7;
+padding: 5px;
+}
+
+div[data-testid="stExpander"] summary {
+font-size: 17px;
+font-weight: 600;
+color: #a83d6b;
+}
+
+.block-container {
+padding-top: 2rem;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+# TITULO
+st.title("El Impacto de la Inteligencia Artificial en la Práctica Terapéutica")
+
+st.markdown(
+"> La innovación en salud mental comienza cuando usamos la tecnología con ética, conocimiento y humanidad."
+)
+
+# SIDEBAR
 st.sidebar.title("Contenido")
 
 seccion = st.sidebar.radio(
-    "Selecciona una sección:",
-    [
-        "Introducción",
-        "Historia de la IA en Psicología",
-        "¿Qué es la IA en terapia?",
-        "Componentes de la IA",
-        "IA en acción",
-        "Fenotipificación digital",
-        "Relación humano-máquina",
-        "Referencias"
-    ]
+"Selecciona una sección:",
+[
+"Artículo",
+"Referencias"
+]
 )
 
-# INTRODUCCIÓN
-if seccion == "Introducción":
+# ARTÍCULO
+if seccion == "Artículo":
 
-    st.header("Introducción")
-
-    st.write("""
-La salud mental ha dejado de ser un tema del que se habla en voz baja para convertirse en una prioridad para todos. Sin embargo, hoy nos enfrentamos a un gran problema: cada vez más personas necesitan apoyo psicológico, pero no hay suficientes psicólogos o expertos preparados para atender a tanta gente al mismo tiempo.
-
-En este escenario, la tecnología ha dado un paso al frente para ayudar a que nadie se quede sin la atención que necesita. La integración de la tecnología en este ámbito se basa en la necesidad de cerrar la brecha entre la gran cantidad de personas que buscan ayuda y la falta de especialistas disponibles para atenderlos.
-    """)
-
-# HISTORIA
-elif seccion == "Historia de la IA en Psicología":
-
-    st.header("De los primeros robots a la inteligencia actual")
+    st.header("El Impacto de la Inteligencia Artificial en la Práctica Terapéutica")
 
     st.write("""
-La relación entre las computadoras y la psicología no es algo nuevo. Los primeros pasos se dieron en los años 60 con la creación de ELIZA, el primer programa de chat que intentaba imitar a un terapeuta.
+La salud mental ha dejado de ser un tema del que se habla en voz baja para convertirse en una prioridad para todos. Sin embargo, hoy nos enfrentamos a un gran problema: cada vez más personas necesitan apoyo psicológico, pero no hay suficientes psicólogos o expertos preparados para atender a tanta gente al mismo tiempo. En este escenario, la tecnología ha dado un paso al frente para ayudar a que nadie se quede sin la atención que necesita. La integración de la tecnología en este ámbito se basa en la necesidad de cerrar la brecha entre la gran cantidad de personas que buscan ayuda y la falta de especialistas disponibles para atenderlos (Bhatt, 2024).
 
-Aunque era muy sencillo, ELIZA demostró algo sorprendente: los seres humanos pueden sentir que una máquina los entiende y los acompaña si la comunicación está bien diseñada.
+Lo que antes parecía una película de ciencia ficción —una computadora que puede entendernos— es hoy una realidad que apoya a los terapeutas y a los pacientes en su día a día. Pero ¿cómo hemos llegado hasta aquí y qué significa realmente que un programa de computadora participe en nuestro bienestar emocional?
+""")
 
-Hoy en día la inteligencia artificial ha evolucionado mucho. Ya no es solo un medio para enviar mensajes, sino una herramienta que puede apoyar tratamientos basados en estudios científicos, especialmente dentro de enfoques como la terapia cognitivo-conductual.
-    """)
-
-# DEFINICIÓN
-elif seccion == "¿Qué es la IA en terapia?":
-
-    st.header("¿Qué es exactamente la IA cuando hablamos de terapia?")
+    st.subheader("De los primeros robots a la inteligencia actual: Un poco de historia")
 
     st.write("""
-Podemos entender la inteligencia artificial en psicología como el uso de programas inteligentes capaces de realizar tareas que normalmente haría un humano.
+La relación entre las computadoras y la psicología no es algo nuevo. De hecho, los primeros pasos se dieron en los años 60 con la creación de ELIZA, el primer programa de chat que intentaba imitar a un terapeuta. Aunque era muy sencillo, ELIZA demostró algo sorprendente: los seres humanos podemos sentir que una máquina nos entiende y nos acompaña si la comunicación está bien diseñada (Vaidyam et al., 2019).
 
-Por ejemplo:
+Hoy en día, la Inteligencia Artificial (IA) ha evolucionado muchísimo. Ya no es solo un medio para enviar mensajes, sino que se ha convertido en una herramienta activa que ofrece tratamientos basados en estudios científicos (Bhatt, 2024). La mayoría de estos avances se basan en la Terapia Cognitivo-Conductual (TCC). Este tipo de terapia es muy efectiva porque se centra en pasos prácticos y reglas claras, lo que permite que sea "traducida" fácilmente a un lenguaje que las computadoras pueden procesar para ayudarnos a cambiar pensamientos negativos (Sadeh-Sharvit et al., 2023). Estos sistemas han pasado de ser simples páginas de autoayuda a complejos programas que aprenden de nosotros para darnos un cuidado mucho más personal (Ni & Jia, 2025).
+""")
 
-- Identificar qué le sucede a una persona
-- Analizar emociones
-- Planear estrategias de intervención
-- Monitorear el estado psicológico día a día
-    """)
-
-# COMPONENTES
-elif seccion == "Componentes de la IA":
-
-    st.header("Componentes principales de la inteligencia artificial")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.subheader("Aprendizaje Automático")
-        st.write("""
-Es la capacidad que tienen los sistemas para analizar enormes cantidades de datos y detectar patrones. Gracias a esto, la IA puede sugerir qué tipo de tratamiento podría funcionar mejor para cada paciente.
-        """)
-
-    with col2:
-        st.subheader("Procesamiento de Lenguaje Natural")
-        st.write("""
-Es lo que permite que las computadoras comprendan nuestras palabras, el tono en que escribimos y la forma en que nos expresamos, respondiendo de una manera coherente.
-        """)
-
-# IA EN ACCIÓN
-elif seccion == "IA en acción":
-
-    st.header("La IA en acción: ¿Qué dicen los estudios?")
+    st.subheader("¿Qué es exactamente la IA cuando hablamos de terapia?")
 
     st.write("""
-La investigación científica ha demostrado que herramientas basadas en inteligencia artificial pueden ayudar a reducir síntomas de depresión y ansiedad.
+Para entender este fenómeno sin complicaciones, podemos decir que la IA en la psicología es el uso de programas inteligentes para hacer tareas que normalmente haría un humano, como identificar qué nos pasa, planear cómo ayudarnos o vigilar cómo nos sentimos día tras día (Yeasmin et al., 2025).
+""")
 
-Entre las aplicaciones más comunes se encuentran:
+    st.markdown("""
+1. **El Aprendizaje Automático:** Es como un asistente que tiene la capacidad de revisar millones de datos en segundos para adivinar qué tratamiento funcionará mejor para cada persona (Milasan & Scott-Purdy, 2025).
 
-- Chatbots terapéuticos
-- Plataformas digitales de apoyo psicológico
-- Sistemas de monitoreo emocional
-
-Estas herramientas pueden ser especialmente útiles para personas que no tienen acceso fácil a servicios de salud mental.
-    """)
-
-# FENOTIPIFICACIÓN
-elif seccion == "Fenotipificación digital":
-
-    st.header("La IA en acción: Fenotipificación digital")
+2. **El Procesamiento de Lenguaje:** Es lo que permite que la computadora entienda nuestras palabras, nuestro tono y la forma en que escribimos, respondiéndonos de una manera coherente y profesional (Milasan & Scott-Purdy, 2025).
+""")
 
     st.write("""
-La fenotipificación digital consiste en analizar datos que generamos con nuestros dispositivos, como el celular, para comprender nuestro estado emocional.
-
-Por ejemplo:
-
-- Cuánto dormimos
-- Cuánto nos movemos
-- Qué tan rápido escribimos
-- Con qué frecuencia usamos ciertas aplicaciones
-
-Estos datos pueden ayudar a detectar cambios emocionales importantes y prevenir crisis antes de que ocurran.
-    """)
-
-# RELACIÓN HUMANO MÁQUINA
-elif seccion == "Relación humano-máquina":
-
-    st.header("¿Sustitución o colaboración?")
-
-    st.write("""
-Muchas personas temen que la inteligencia artificial reemplace a los psicólogos. Sin embargo, el objetivo real de estas tecnologías es apoyar el trabajo del profesional.
-
-La IA puede encargarse de analizar datos, monitorear síntomas y reducir tareas administrativas. Mientras tanto, el terapeuta aporta empatía, juicio clínico y comprensión del contexto humano.
-
-Por ello, el futuro de la psicoterapia probablemente será un modelo híbrido donde humanos y tecnología trabajen juntos.
-    """)
+Además, la IA ayuda a los psicólogos con el papeleo y las tareas administrativas. Estos sistemas de apoyo permiten que el profesional no pierda tiempo en formularios y pueda concentrarse totalmente en escuchar a su paciente durante la consulta (Higgins & Wilson, 2025). Al final, esto crea un modelo de atención "híbrido", donde se combina el corazón y la intuición del psicólogo con la memoria y la precisión de la máquina (Rollwage et al., 2023).
+""")
 
 # REFERENCIAS
 elif seccion == "Referencias":
 
-    st.header("Referencias y resumen de los artículos")
+    st.header("Referencias")
 
-    with st.expander("Bhatt, S. (2024)"):
-        st.write("""
-El artículo analiza el papel de la inteligencia artificial dentro de la psicoterapia digital, destacando cómo las tecnologías basadas en aprendizaje automático, procesamiento del lenguaje natural y sistemas conversacionales están transformando la prestación de servicios en salud mental. Se describe cómo la IA puede utilizarse para apoyar procesos terapéuticos mediante chatbots, monitoreo automatizado de síntomas, análisis de patrones emocionales y personalización de intervenciones.
-
-El texto enfatiza que la inteligencia artificial puede aumentar la accesibilidad, reducir costos y ofrecer apoyo continuo entre sesiones terapéuticas. También se discuten aplicaciones en evaluación inicial, detección temprana de riesgo y adaptación dinámica de contenidos terapéuticos.
-
-Sin embargo, el artículo advierte sobre limitaciones éticas, riesgos de dependencia tecnológica, problemas de privacidad y la necesidad de mantener el juicio clínico humano como elemento central. Se concluye que la IA representa una herramienta complementaria dentro de la psicoterapia, pero su implementación debe estar respaldada por evidencia científica sólida y regulaciones claras.
-        """)
+    with st.expander("Bhatt (2024)"):
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("D'Alfonso et al. (2017)"):
-        st.write("""
-El artículo explora la integración de la inteligencia artificial en la plataforma Moderated Online Social Therapy (MOST), diseñada para apoyar la salud mental de jóvenes con trastornos como la psicosis y la depresión. Este sistema combina una red social segura con recursos terapéuticos y el apoyo de expertos y pares. El objetivo principal es demostrar cómo tecnologías avanzadas pueden automatizar contenido personalizado y mejorar la moderación clínica.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Gual-Montolio et al. (2022)"):
-        st.write("""
-El artículo analiza el uso de herramientas de inteligencia artificial como apoyo complementario en intervenciones psicológicas dirigidas a problemas emocionales como depresión y ansiedad. La IA puede analizar grandes volúmenes de datos clínicos, identificar patrones de respuesta al tratamiento y predecir riesgos de recaída.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Higgins & Wilson (2025)"):
-        st.write("""
-El artículo analiza cómo la inteligencia artificial puede integrarse con soluciones de fuerza laboral en salud mental para abordar la creciente demanda de servicios. Se discuten aplicaciones como triage automatizado, priorización de casos, monitoreo de síntomas y documentación clínica.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Milasan & Scott-Purdy (2025)"):
-        st.write("""
-Analiza el papel emergente de la inteligencia artificial en la práctica de enfermería en salud mental, destacando su potencial para transformar la evaluación, monitoreo clínico y gestión del cuidado.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Ni & Jia (2025)"):
-        st.write("""
-Presenta una revisión de intervenciones digitales impulsadas por inteligencia artificial en salud mental, incluyendo chatbots, monitoreo automatizado y algoritmos predictivos.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Rollwage et al. (2023)"):
-        st.write("""
-Analiza el uso de inteligencia artificial conversacional para facilitar evaluaciones de salud mental y mejorar la eficiencia clínica dentro de servicios de psicoterapia.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Sadeh-Sharvit et al. (2023)"):
-        st.write("""
-Evalúa una plataforma de inteligencia artificial aplicada a la terapia cognitivo-conductual, mostrando reducción de síntomas depresivos y ansiosos y menor tiempo dedicado a notas clínicas.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Vaidyam et al. (2019)"):
-        st.write("""
-Revisión de literatura sobre chatbots en salud mental, utilizados para psicoeducación, monitoreo de síntomas y apoyo emocional.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
 
     with st.expander("Yeasmin et al. (2025)"):
-        st.write("""
-Examina avances recientes en inteligencia artificial aplicada a diagnóstico, terapia y bienestar emocional, destacando tanto su potencial como desafíos éticos.
-        """)
+        st.write("PEGA AQUÍ TU RESUMEN COMPLETO EXACTO")
